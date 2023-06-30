@@ -1,0 +1,213 @@
+:root {
+  --color1: #5E05F0;
+  --color2: #FA1505;
+  --color3: #E3A410;
+  --color4: #65FA05;
+  --color5: #00EBF0;
+  --color-blanco: #FFFFFF;
+  --color-negro: #000000;
+  --color-gris-claro: #CCCCCC;
+  --color-gris-oscuro: #333333;
+
+  /* EP3 */
+  --color-primary: #059473;
+  --color-secondary: #9e7856;
+  --color-text: #545454;
+  --color-accent: #212121;
+}
+
+/* EP3 */
+
+body {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+h1,
+.h1 {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  text-transform: inherit;
+  font-weight: 600 !important;
+  font-style: normal;
+  color: #333333;
+  font-size: 32px !important;
+  font-display: swap;
+}
+
+h2,
+.h2 {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  text-transform: inherit;
+  font-weight: 600 !important;
+  font-style: normal;
+  color: #333333;
+  font-size: 28px !important;
+  font-display: swap;
+}
+
+h3,
+.h3 {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  text-transform: inherit;
+  font-weight: 600 !important;
+  font-style: normal;
+  color: #333333;
+  font-size: 24px !important;
+  font-display: swap;
+}
+
+
+.navbar {
+  background-color: var(--color-primary);
+}
+
+.navbar-title {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  text-transform: inherit;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  color: var(--color-blanco) !important;
+  letter-spacing: .1;
+}
+
+
+
+/* EP3 Complete */
+
+/* h1 {
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 48px;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+}
+
+h3{
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+} */
+
+#page-header {
+  background-color: var(--color-gris-claro);
+  padding: 15px 0;
+}
+
+.padded {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.list-group-item.active {
+  background-color: var(--color1);
+  border-color: var(--color1);
+}
+
+@media (min-width: 1680px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1600px;
+  }
+}
+
+.botonEliminar {
+  cursor: pointer;
+}
+
+.botonEliminar:hover {
+  color: var(--color2);
+}
+
+.cantidad-carrito {
+  width: 100px;
+  display: inline-block;
+}
+
+/* PRELOAD ---------------- https://loading.io/css/*/
+
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #999;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #999;
+}
+
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+
+  5% {
+    transform: scale(1.1);
+  }
+
+  39% {
+    transform: scale(0.85);
+  }
+
+  45% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+
+
+/*  
+--e-global-typography-primary-font-family: "Poppins";
+--e-global-typography-primary-font-weight: 400;
+--e-global-typography-secondary-font-family: "Satisfy";
+--e-global-typography-secondary-font-weight: 400;
+--e-global-typography-text-font-family: "Poppins";
+--e-global-typography-text-font-weight: 400;
+--e-global-typography-accent-font-family: "Poppins";
+--e-global-typography-accent-font-weight: 400; */

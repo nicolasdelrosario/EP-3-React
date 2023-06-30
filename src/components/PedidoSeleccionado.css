@@ -1,0 +1,7 @@
+.cardPedido {
+  background-color: var(--color-primary) !important;
+}
+
+.cardPedido * {
+  color: var(--color-blanco) !important;
+}
