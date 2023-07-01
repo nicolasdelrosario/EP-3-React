@@ -42,6 +42,7 @@ function Empleados() {
             <div className="card-body">
               <h5 className="card-title">{item.cargo}</h5>
               <p className="card-text">{item.nombres} {item.apellidos}</p>
+              <p className='card-add' data-bs-toggle="modal" data-bs-target="#empleadoModal" onClick={() => mostrarDatosModal(item.idempleado)}>Añadir </p>
             </div>
           </div>
         </div>
