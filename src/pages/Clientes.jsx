@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-function Proveedores() {
-  const [listaProveedores, setListaProveedores] = useState([]);
-  const [listaProveedoresFiltrado, setListaProveedoresFiltrado] = useState([]);
+function Clientes() {
+  const [listaClientes, setListaClientes] = useState([]);
+  const [listaClientesFiltrado, setListaClientesFiltrado] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [ascendente, setAscendente] = useState(1);
   const [columnaAnterior, setColumnaAnterior] = useState("nombreempresa");
@@ -19,8 +19,8 @@ function Proveedores() {
     fetch(root)
       .then((response) => response.json())
       .then((data) => {
-        setListaProveedores(data);
-        setListaProveedoresFiltrado(data)
+        setListaClientes(data);
+        setListaClientesFiltrado(data)
         setCargando(false)
         setNumPaginas(Math.ceil(data.length / filasPagina))
       });
@@ -38,7 +38,7 @@ function Proveedores() {
         </tr>
       </thead>
       <tbody>
-        {listaProveedoresFiltrado.slice(pagina * filasPagina, (pagina + 1) * filasPagina).map((item) => (
+        {listaClientesFiltrado.slice(pagina * filasPagina, (pagina + 1) * filasPagina).map((item) => (
           <tr key={item.idproveedor}>
             <td>{item.idproveedor}</td>
             <td>{item.nombreempresa}</td>
@@ -62,7 +62,7 @@ function Proveedores() {
     setAscendente(ascendentex)
     setColumnaAnterior(columnaSeleccionada);
 
-    setListaProveedoresFiltrado([...listaProveedoresFiltrado].sort((a, b) => {
+    setListaClientesFiltrado([...listaClientesFiltrado].sort((a, b) => {
       const codigoMenor = "return a." + columnaSeleccionada + "< b." + columnaSeleccionada + "? true : false";
       const funcionMenor = new Function('a', 'b', codigoMenor);
       if (funcionMenor(a, b)) {
@@ -83,9 +83,9 @@ function Proveedores() {
     let textoB = event.target.value;
     setTextoBuscar(textoB);
 
-    const resutado = listaProveedores.filter((item) =>
+    const resutado = listaClientes.filter((item) =>
       (item[columnaAnterior].toUpperCase()).includes(textoB.toUpperCase()));
-    setListaProveedoresFiltrado(resutado)
+    setListaClientesFiltrado(resutado)
   }
 
   const avanzar = () => {
@@ -103,7 +103,7 @@ function Proveedores() {
   return (
     <section className="padded">
       <div className="container">
-        <h2>Proveedores</h2>
+        <h2>Clientes</h2>
         <div className="mb-3">
           <input type="text" value={textoBuscar} onChange={(event) => buscarTexto(event)}
             className='form-control' placeholder='Indique expresión a buscar' />
@@ -121,4 +121,4 @@ function Proveedores() {
   );
 }
 
-export default Proveedores;
+export default Clientes;

@@ -13,6 +13,9 @@ import ProductoDetalles from './pages/ProductoDetalles';
 import Carrito from './pages/Carrito';
 import Seleccionados from './pages/Seleccionados';
 import Pedidos from './pages/Pedidos';
+import Directores from './pages/Directores';
+import Login from './pages/Login';
+import Clientes from './pages/Clientes';
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
         <Route path='/carrito' element={<Carrito />} />
         <Route path='/seleccionados' element={<Seleccionados />}/>
         <Route path='/pedidos' element={<Pedidos />}/>
+        <Route path='/directores' element={<Directores />}></Route>
+        <Route path='/login' element={ <Login></Login> }></Route>
+        <Route path='/clientes' element={<Clientes />}/>
       </Routes>
 
       <MainFooter />
