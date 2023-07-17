@@ -1,3 +1,13 @@
 .clientes {
   color: var(--color-text)
 }
+
+.page-link {
+  background-color: var(--color-primary) !important; 
+  color: var(--color-blanco) !important;
+}
+
+.page-link:hover {
+  background-color: var(--color-blanco) !important; 
+  color: var(--color-primary) !important
+}
