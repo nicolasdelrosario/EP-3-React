@@ -4,7 +4,6 @@ import './Clientes.css'
 function Clientes() {
   const [listaClientes, setListaClientes] = useState([]);
   const [listaClientesFiltrado, setListaClientesFiltrado] = useState([]);
-  const [cargando, setCargando] = useState(true);
   const [ascendente, setAscendente] = useState(1);
   const [columnaAnterior, setColumnaAnterior] = useState("empresa");
   const [textoBuscar, setTextoBuscar] = useState("");
@@ -22,7 +21,6 @@ function Clientes() {
       .then((data) => {
         setListaClientes(data);
         setListaClientesFiltrado(data)
-        setCargando(false)
         setNumPaginas(Math.ceil(data.length / filasPagina))
       });
   };
@@ -52,6 +50,8 @@ function Clientes() {
     </table>
   );
 
+
+
   const bootstrapNavigation = () => (
     <nav aria-label="Page navigation example">
       <ul className="pagination">
@@ -60,6 +60,7 @@ function Clientes() {
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
+
         <li className="page-item"><a className="page-link" href="#" onClick={() => seleccionarPagina(0)}>1</a></li>
         <li className="page-item"><a className="page-link" href="#" onClick={() => seleccionarPagina(1)}>2</a></li>
         <li className="page-item"><a className="page-link" href="#" onClick={() => seleccionarPagina(2)}>3</a></li>
@@ -127,16 +128,6 @@ function Clientes() {
 
   const seleccionarPagina = (pagina) => {
     setPagina(pagina)
-
-    // let itemsLista = document.querySelectorAll(".page-item")
-    // itemsLista.forEach(item => {
-    //   item.classList.remove("active")
-    //   item.currentTarget.classList.add("active");
-    // })
-
-    // item.currentTarget.classList.add("active");
-
-//    let columnaSeleccionada = event.target.getAttribute("columna");
   }
 
   return (
@@ -147,12 +138,10 @@ function Clientes() {
           <input type="text" value={textoBuscar} onChange={(event) => buscarTexto(event)}
             className='form-control' placeholder='Indique expresión a buscar' />
         </div>
-        {cargando === true
-          ? <div className="lds-heart"><div></div></div>
-          : dibujarTabla()
-        }
+        {dibujarTabla()}
 
-        { bootstrapNavigation() }
+
+        {bootstrapNavigation()}
 
         <div> {(pagina + 1) + " de " + numPaginas} </div>
       </div>
