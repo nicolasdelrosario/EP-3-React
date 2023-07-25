@@ -39,6 +39,9 @@ function MainNav() {
             <li className='nav-item'>
               <Link className="nav-link navbar-title" to="/clientes">Clientes</Link>
             </li>
+            <li className='nav-item'>
+              <Link className='nav-link navbar-title' to="/consultas">Consultas</Link>
+            </li>
           </ul>
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className='nav-item'>
@@ -54,6 +57,7 @@ function MainNav() {
                 <i className='bi bi-person-fill' title='Iniciar Sesión'/> Login
               </Link>
             </li>
+
           </ul>
         </div>
       </div>

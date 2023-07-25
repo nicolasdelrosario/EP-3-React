@@ -16,6 +16,8 @@ import Pedidos from './pages/Pedidos';
 import Directores from './pages/Directores';
 import Login from './pages/Login';
 import Clientes from './pages/Clientes';
+import Consultas from './pages/Consultas';
+import ConsultaSeleccionada from './components/ConsultaSeleccionada';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route path='/directores' element={<Directores />}></Route>
         <Route path='/login' element={ <Login></Login> }></Route>
         <Route path='/clientes' element={<Clientes />}/>
+        <Route path='/consultas' element={<Consultas/>}/>
+        <Route path="/consulaseleccionada" element={<ConsultaSeleccionada/>}/>
       </Routes>
 
       <MainFooter />
